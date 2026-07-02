@@ -44,7 +44,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 17, 32, 0.9);
+  background: var(--bg-elevated);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
@@ -97,8 +97,9 @@ body {
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 16px;
+  top: 50%;
   right: 24px;
+  transform: translateY(-50%);
   z-index: 200;
   width: 44px;
   height: 44px;
