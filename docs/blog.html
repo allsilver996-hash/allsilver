@@ -18,11 +18,18 @@
     <div class="page-eyebrow">// 03 · blog</div>
     <h1 class="page-title">블로그</h1>
   </div>
-  <div class="placeholder">내용 준비 중</div>
+  <div id="post-viewer" class="post-viewer" data-posts="BLOG_POSTS">
+    <div id="post-content" class="post-content"></div>
+    <aside class="post-sidebar">
+      <ul id="post-list" class="post-list"></ul>
+    </aside>
+  </div>
 </main>
 
 <footer>© 2026 Data Portfolio</footer>
 
+<script src="js/posts-data.js"></script>
+<script src="js/post-viewer.js"></script>
 <script src="js/theme.js"></script>
 </body>
 </html>
