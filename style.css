@@ -1,0 +1,123 @@
+:root {
+  --bg: #0b1120;
+  --bg-elevated: #111a2e;
+  --border: #223049;
+  --text: #e5edf7;
+  --text-dim: #8b9bb4;
+  --accent: #22d3ee;
+  --accent-dim: #0e7490;
+  --mono: 'JetBrains Mono', 'Space Mono', monospace;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 17, 32, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-query {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.nav-query span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Page shell ---------- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 24px 120px;
+  min-height: 60vh;
+}
+
+.page-header {
+  margin-bottom: 48px;
+}
+
+.page-eyebrow {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.page-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.placeholder {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+@media (max-width: 640px) {
+  .nav-inner { flex-wrap: wrap; gap: 12px; }
+  .nav-query { display: none; }
+  .page-title { font-size: 28px; }
+}
