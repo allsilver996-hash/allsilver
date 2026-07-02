@@ -2,9 +2,8 @@
   const PAGES = [
     { file: 'index.html',    label: '메인',    key: 'main',     num: '00' },
     { file: 'about.html',    label: '이력소개', key: 'about',    num: '01' },
-    { file: 'skills.html',   label: '기술스택', key: 'skills',   num: '02' },
-    { file: 'projects.html', label: '프로젝트', key: 'projects', num: '03' },
-    { file: 'blog.html',     label: '블로그',   key: 'blog',     num: '04' },
+    { file: 'projects.html', label: '프로젝트', key: 'projects', num: '02' },
+    { file: 'blog.html',     label: '블로그',   key: 'blog',     num: '03' },
   ];
 
   const current = location.pathname.split('/').pop() || 'index.html';
