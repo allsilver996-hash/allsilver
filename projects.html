@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script>
+  (function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>프로젝트 · Data Portfolio</title>
@@ -8,17 +11,7 @@
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-query">SELECT * FROM <span>projects</span></div>
-    <ul class="nav-links">
-      <li><a href="index.html">메인</a></li>
-      <li><a href="about.html">이력소개</a></li>
-      <li><a href="projects.html" class="active">프로젝트</a></li>
-      <li><a href="resume.html">레쥬메</a></li>
-    </ul>
-  </div>
-</nav>
+<script src="js/nav.js"></script>
 
 <main>
   <div class="page-header">
@@ -30,5 +23,6 @@
 
 <footer>© 2026 Data Portfolio</footer>
 
+<script src="js/theme.js"></script>
 </body>
 </html>
