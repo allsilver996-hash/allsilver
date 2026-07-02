@@ -1,15 +1,17 @@
-(function () {
-  const root = document.documentElement;
-  const saved = localStorage.getItem('theme') || 'dark';
-  root.setAttribute('data-theme', saved);
+document.addEventListener("DOMContentLoaded", function () {
+  const savedTheme = localStorage.getItem("color-theme") || "light";
+  document.documentElement.setAttribute("color-theme", savedTheme);
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
+  const toggleButton = document.querySelector('.dark-light-toggle');
+  if (!toggleButton) return;
+
+  toggleButton.textContent = savedTheme === "light" ? "🌜" : "🌞";
+
+  toggleButton.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute("color-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("color-theme", newTheme);
+    localStorage.setItem("color-theme", newTheme);
+    toggleButton.textContent = newTheme === "light" ? "🌜" : "🌞";
   });
-})();
+});

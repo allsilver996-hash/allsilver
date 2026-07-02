@@ -1,18 +1,27 @@
 :root {
-  --bg: #0b1120;
-  --bg-elevated: #111a2e;
+  --mono: 'JetBrains Mono', 'Space Mono', monospace;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+
+:root[color-theme="dark"] {
+  --surface-default: #17171C;
+  --btn-default: #23232B;
+  --btn-svg-hover: gold;
+  --bg: var(--surface-default);
+  --bg-elevated: var(--btn-default);
   --border: #223049;
   --text: #e5edf7;
   --text-dim: #8b9bb4;
   --accent: #22d3ee;
   --accent-dim: #0e7490;
-  --mono: 'JetBrains Mono', 'Space Mono', monospace;
-  --sans: 'Inter', -apple-system, sans-serif;
 }
 
-:root[data-theme="light"] {
-  --bg: #f7f9fc;
-  --bg-elevated: #ffffff;
+:root[color-theme="light"] {
+  --surface-default: #F2F0EE;
+  --btn-default: #FFFFFF;
+  --btn-svg-hover: #FFA500;
+  --bg: var(--surface-default);
+  --bg-elevated: var(--btn-default);
   --border: #dbe3ee;
   --text: #101828;
   --text-dim: #5b6b84;
@@ -83,40 +92,26 @@ body {
 }
 
 /* ---------- Theme toggle ---------- */
-.theme-toggle {
-  margin-left: auto;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--bg-elevated);
+.dark-light-toggle {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  background-color: var(--btn-default);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
   cursor: pointer;
-  flex-shrink: 0;
-  transition: border-color 0.15s ease, transform 0.3s ease;
+  font-size: 22px;
+  line-height: 1;
+  transition: background-color 0.5s;
 }
 
-.theme-toggle:hover {
-  border-color: var(--accent);
-}
-
-.theme-toggle svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  transition: transform 0.4s ease, opacity 0.2s ease;
-}
-
-.theme-toggle .icon-moon { display: none; }
-:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
-:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
-
-.theme-toggle:active svg {
-  transform: rotate(20deg) scale(0.9);
+.dark-light-toggle:hover {
+  color: var(--btn-svg-hover);
 }
 
 /* ---------- Page shell ---------- */
